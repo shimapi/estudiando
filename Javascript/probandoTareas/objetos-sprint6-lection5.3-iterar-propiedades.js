@@ -6,8 +6,6 @@ function swap(obj) {
   return res;
 }
 
-
-
 const myObj = {
   first: 1,
   second: 2,
