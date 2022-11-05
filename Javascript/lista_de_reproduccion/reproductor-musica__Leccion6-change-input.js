@@ -26,9 +26,10 @@ function setSubmitButtonState(isFormValid) {
 form.addEventListener("submit", function (evt) {
   evt.preventDefault();
   addSong(artist.value, title.value);
-  artist.value = "";
-  title.value = "";
   setSubmitButtonState(false)
+  //artist.value = "";
+  //title.value = "";
+  form.reset()
 });
 
 form.addEventListener("input", function (evt) {
