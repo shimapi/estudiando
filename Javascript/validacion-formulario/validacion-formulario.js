@@ -27,6 +27,7 @@ const hasInvalidInput = (inputList) => {
 };
 
 const toggleButtonState = (inputList, buttonElement) => {
+  console.log(hasInvalidInput(inputList));
   if (hasInvalidInput(inputList)) {
     buttonElement.classList.add("button_inactive");
   } else {
@@ -36,9 +37,16 @@ const toggleButtonState = (inputList, buttonElement) => {
 
 const setEventListeners = (formElement) => {
   const inputList = Array.from(formElement.querySelectorAll(".form__input"));
+  const buttonElement = formElement.querySelector(".form__submit");
+
+  // aquí, para comprobar el estado del botón al principio
+  toggleButtonState(inputList, buttonElement);
+
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", function () {
       checkInputValidity(formElement, inputElement);
+      // y aquí, para comprobarlo cada vez que haya cambios en la entrada de algún campo
+      toggleButtonState(inputList, buttonElement);
     });
   });
 };
@@ -49,15 +57,13 @@ const enableValidation = () => {
     formElement.addEventListener("submit", function (evt) {
       evt.preventDefault();
     });
-    
+
     const fieldsetList = Array.from(formElement.querySelectorAll(".form__set"));
 
     fieldsetList.forEach((fieldset) => {
       setEventListeners(fieldset);
     });
-    
-    setEventListeners(formElement);
   });
-}
+};
 
 enableValidation();
