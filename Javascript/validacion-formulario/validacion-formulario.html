@@ -21,12 +21,17 @@
   <body class="page">
 
     <h1><input type="text" pattern="^[a-zA-Z]+$" placeholder="Regex: ^[a-zA-Z]+$"></h1>
+
+
     <div class="page__content">
       <main class="page__section content">
         <h1 class="content__title">Formulario de feedback</h1>
         <p class="content__subtitle">Rellena los campos obligatorios</p>
+
         <form class="form" novalidate>
+
           <fieldset class="form__set">
+
             <label class="form__field">
               <input
                 type="email"
@@ -36,10 +41,11 @@
                 minlength="7"
               />
               <span class="form__placeholder email-input-placeholder">
-                Siguiente
+                e-mail
               </span>
               <span class="form__input-error email-input-error"></span>
             </label>
+
             <label class="form__field">
               <input
                 type="password"
@@ -53,6 +59,7 @@
               </span>
               <span class="form__input-error password-input-error"></span>
             </label>
+
             <label class="form__field form__field_type_row">
               <input
                 class="form__checkbox form__input"
@@ -68,10 +75,12 @@
               <span class="form__input-error checkbox-input-error"></span>
               <span class="form__placeholder checkbox-input-placeholder"></span>
             </label>
+            
             <button type="button" class="form__submit form__button button">
               Siguiente
             </button>
           </fieldset>
+
           <fieldset class="form__set">
             <button class="text-button form__previous">&larr; Atrás</button>
             <label class="form__field">
@@ -134,6 +143,7 @@
               Siguiente
             </button>
           </fieldset>
+
           <fieldset class="form__set">
             <button class="text-button form__previous">&larr; Atrás</button>
             <p class="form__paragraph">¡Enviado con éxito!</p>
@@ -142,9 +152,10 @@
             </button>
           </fieldset>
         </form>
+
       </main>
     </div>
-    <script src="https://code.s3.yandex.net/web-code/form-validation/lesson-5/index.js"></script>
+    <script src="/validacion-formulario/index.js"></script>
     <script src="/validacion-formulario/validacion-formulario.js"></script>
   </body>
 </html>

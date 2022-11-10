@@ -9,7 +9,7 @@ function addSong(artistValue, titleValue) {
 
   songElement.querySelector(".song__artist").textContent = artistValue;
   songElement.querySelector(".song__title").textContent = titleValue;
-  songElement.querySelector(".song__like").addEventListener("clic", function (evt) {
+  songElement.querySelector(".song__like").addEventListener("click", function (evt) {
     evt.target.classList.toggle("song__like_active")
   });
 
@@ -29,7 +29,7 @@ function keyHandler(evt) {
   }
 }
 
-addButton.addEventListener("clic", function () {
+addButton.addEventListener("click", function () {
   addSong(artistInput.value, titleInput.value);
 });
 
