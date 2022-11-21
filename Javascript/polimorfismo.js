@@ -18,7 +18,7 @@ class Song extends AudioItem {
     this._releaseYear = releaseYear;
   }
 
-  getSongInfo() {
+  getInfo() {
     return `${this._artist} - ${this._title} (${this._releaseYear})`
   }
 }
@@ -30,7 +30,7 @@ class PodcastEpisode extends AudioItem {
     this._duration = duration;
   }
 
-  getEpisodeInfo() {
+  getInfo() {
     return `${this._artist}. "${this._title}" - ${this._guest} (${this._getFormattedDuration()} seconds)`;
   }
 
@@ -50,16 +50,18 @@ const list = [song1, episode1, song2, episode2];
 
 function getAudioInfo(audioList) {
   audioList.forEach((audioItem) => {
-    if (audioItem.getSongInfo) {
+    console.log(audioItem.getInfo());
+  /*   if (audioItem.getSongInfo) {
       // registra información sobre la canción
        //console.log(super.getSongInfo)
-      return super.getSongInfo();
+      console.log(audioItem.getSongInfo());
 
     } else if (audioItem.getEpisodeInfo) {
       // registra información sobre el episodio de podcast
       //console.log(PodcastEpisode.getEpisodeInfo)
-      return super.getEpisodeInfo();
-    }
+      //return PodcastEpisode.getEpisodeInfo;
+      console.log(audioItem.getEpisodeInfo());
+    } */
   });
 }
 
