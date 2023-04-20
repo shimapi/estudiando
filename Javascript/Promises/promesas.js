@@ -1,12 +1,13 @@
 // crear un promise
 const newPromise = new Promise(function(resolve, reject) {
   // determina aleatoriamente si la solicitud ha sido procesada o no
-    const rand = Math.random() > 0.5 ? true : false;
+    const numberr = Math.random()
+    const rand = Math.round(numberr) > 0.5 ? true : false;
 
     if (rand) {
-        resolve("Solicitud procesada satisfactoriamente");
+        resolve(numberr + " Solicitud OK");
     } else {
-        reject("Solicitud rechazada");
+        reject(numberr + " Solicitud rechazada");
     }
 });
 
@@ -30,3 +31,14 @@ newPromise
   .finally(function () { // se ejecuta en ambos casos
       console.log("Prometemos que recibimos tu solicitud");
   });
+
+
+  /**
+   * 
+   * En resumen, los promises se crean con Promise(), a la que se le pasa un callback. Este callback toma dos funciones que pueden ser invocadas en el cuerpo del callback.
+    La primera función que se pasa al callback es resolve(). Cambia el estado del promise a "resolved" (resuelto). El valor pasado a esta función será pasado al método then().
+    La segunda función es reject(). Cambia el estado del promise a "rejected" (rechazado). El valor pasado a esta función se pasará al método catch().
+    
+    En resumen, la sintaxis para crear un promise es la siguiente: primero llama al constructor Promise(), y luego describe la lógica para procesar que se resuelva o que se rechace en los métodos then() y catch(), respectivamente.
+   * 
+   */
